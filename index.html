@@ -35,6 +35,7 @@
       --input-bg: #232526;
       --input-border: #444;
     }
+
     * { box-sizing: border-box; }
     html, body {
       margin: 0; padding: 0;
@@ -51,6 +52,8 @@
       position: sticky; top:0; z-index:1000;
     }
     .nav { display: flex; align-items:center; justify-content:space-between; position:relative;}
+    
+    /* Portfolio Logo with Atom SVG */
     .nav__logo {
       font-weight: 800;
       font-size: clamp(1.2rem,3vw,1.6rem);
@@ -104,6 +107,8 @@
     .theme-toggle:hover {transform:scale(1.05);}
     .nav__toggle {display:none;flex-direction:column;background:none;border:none;cursor:pointer;padding:.5rem;z-index:1001;}
     .nav__toggle span {width:25px;height:3px;background:var(--color-text);margin:3px 0;transition:all var(--transition-speed);border-radius:3px;}
+
+    /* Matrix background canvas */
     #matrix-bg {
       position: absolute;
       left: 0; top: 0; right: 0; bottom: 0;
@@ -159,8 +164,8 @@
     .social {text-align:center;margin-top:2rem;}
     .social a {color:var(--color-accent);text-decoration:none;margin:0 1rem;font-size:var(--fs-sm);font-weight:500;transition:all var(--transition-speed);}
     .social a:hover{text-decoration:underline;transform:translateY(-1px);}
-    /* #linkedin {background: #0077b5;color: white !important; padding: .5rem 1rem; border-radius:5px; text-decoration:none;}
-    #linkedin:hover {background:#005582;} */
+    #linkedin {background: #0077b5;color: white !important; padding: .5rem 1rem; border-radius:5px; text-decoration:none;}
+    #linkedin:hover {background:#005582;}
     .btn {background: var(--btn-bg); color: var(--btn-text); border:none; padding:1rem 2rem; border-radius:25px; font-size:var(--fs-sm); font-weight:600; cursor:pointer; transition:all var(--transition-speed); display:inline-block; text-decoration:none; text-align:center; min-height:44px; min-width:120px;}
     .btn:hover, .btn:focus {background:#33b483;transform:translateY(-2px);box-shadow:0 5px 15px rgba(33,158,148,0.3);}
     .contact .btn {justify-self:center;width:100%;max-width:200px;}
@@ -352,7 +357,7 @@
         themeIcon.textContent = theme === 'dark' ? '🌔' : '🌖';
         localStorage.setItem('theme', theme);
       }
-      // Default is dark mode!
+      // Default is dark mode now!
       const savedTheme = localStorage.getItem('theme') || 'dark';
       setTheme(savedTheme);
       themeToggle.addEventListener('click', function () {
@@ -388,7 +393,7 @@
           navToggle.classList.remove('active');
         }
       });
-      // Form submission (kept basic)
+      // Form submission (basic)
       const form = document.getElementById('contactForm');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -407,3 +412,4 @@
   </script>
 </body>
 </html>
+
